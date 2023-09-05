@@ -8,6 +8,7 @@ import Create from './Create';
 
 export default function App() {
   const [viewPage, setViewPage] = useState('create');
+
   return (
     <div>
       <NavBar onClick={setViewPage} />

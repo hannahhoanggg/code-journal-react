@@ -1,5 +1,5 @@
 export let data = {
-  view: 'entry-form',
+  view: 'entries',
   entries: [],
   editing: null,
   nextEntryId: 1,
@@ -11,7 +11,7 @@ if (previousDataJSON !== null) {
   data = JSON.parse(previousDataJSON);
 }
 
-function beforeUnload(event) {
+function beforeUnload() {
   const dataJSON = JSON.stringify(data);
   localStorage.setItem('javascript-local-storage', dataJSON);
 }

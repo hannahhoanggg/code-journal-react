@@ -1,4 +1,4 @@
-import Create from './Create';
+import RenderEntry from './RenderEntry';
 import { data } from './data';
 
 export default function Entries({ onClick }) {
@@ -19,14 +19,14 @@ export default function Entries({ onClick }) {
         </div>
       </div>
       <div className="row">
-        {data.entries !== null ? (
+        {data.entries.length > 0 ? (
+          <ul className="entry-list">
+            <RenderEntry />
+          </ul>
+        ) : (
           <div className="column-full">
             <p className="no-entries">No entries have been recorded.</p>
           </div>
-        ) : (
-          <ul className="entry-list">
-            <Create />
-          </ul>
         )}
       </div>
     </div>

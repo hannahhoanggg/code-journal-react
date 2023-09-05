@@ -1,8 +1,9 @@
 import { data } from './data';
 
-export default function RenderEntry() {
-  data.entries.map((entry) => (
-    <li dataEntryId={entry.entryId}>
+export default function RenderEntry({ viewPage }) {
+  data.view = viewPage;
+  return data.entries.map((entry) => (
+    <li key={entry.entryId}>
       <div className="row">
         <div className="column-half">
           <img alt={entry.title} src={entry.imageUrl} />
