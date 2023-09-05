@@ -1,0 +1,57 @@
+<div data-view="entry-form" class="entry-form">
+  <form class="form">
+    <div class="row">
+      <div class="column-full">
+        <div class="top-header">
+          <h2>New Entry</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column-full column-half">
+        <img src="images/placeholder-image-square.jpg" alt="placeholder img" />
+      </div>
+      <div class="column-full column-half">
+        <div class="title-box">
+          <label for="title-text">Title</label>
+        </div>
+        <div class="title-box-input">
+          <input
+            required
+            name="title"
+            type="text"
+            class="title"
+            id="title-text" />
+        </div>
+        <div class="image-text">
+          <label for="image-text">Photo URL</label>
+        </div>
+        <div class="image-input">
+          <input
+            required
+            name="image"
+            type="url"
+            class="image"
+            id="image-text" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-full">
+        <div class="title-notes">
+          <label for="notes-text">Notes</label>
+        </div>
+        <div class="notes-input">
+          <textarea name="notes" id="notes-text" rows="6" cols="10"></textarea>
+        </div>
+      </div>
+      <div class="column-full">
+        <div class="row button-row">
+          <a class="delete-entry visibility-hidden">Delete Entry</a>
+          <button>SAVE</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
