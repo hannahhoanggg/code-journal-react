@@ -1,4 +1,5 @@
 import { data } from './data';
+import FaPencil from 'react-icons/fa';
 
 export default function RenderEntry({ viewPage }) {
   data.view = viewPage;
@@ -11,7 +12,7 @@ export default function RenderEntry({ viewPage }) {
         <div className="column-half">
           <h2>
             {entry.title}
-            <i className="fa-solid fa-pencil"></i>
+            <FaPencil />
           </h2>
           <p>{entry.notes}</p>
         </div>
