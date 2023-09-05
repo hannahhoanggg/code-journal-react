@@ -1,6 +1,6 @@
-export default function Entries() {
+export default function Entries({ onClick }) {
   return (
-    <div data-view="entries" className="entries hidden">
+    <div data-view="entries" className="entries">
       <div className="row">
         <div className="column-full">
           <div className="new-header">
@@ -8,7 +8,8 @@ export default function Entries() {
             <a
               data-view="entry-form"
               className="new-button"
-              id="entry-form-anchor">
+              id="entry-form-anchor"
+              onClick={() => onClick('create')}>
               NEW
             </a>
           </div>

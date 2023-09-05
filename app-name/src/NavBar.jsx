@@ -1,4 +1,4 @@
-export default function NavBar() {
+export default function NavBar({ onClick }) {
   return (
     <header className="heading">
       <div className="container">
@@ -10,7 +10,7 @@ export default function NavBar() {
                 id="entries-anchor"
                 data-view="entries"
                 className="nav-bar-title">
-                <h4>Entries</h4>
+                <h4 onClick={() => onClick('entries')}>Entries</h4>
               </a>
             </nav>
           </div>

@@ -1,6 +1,6 @@
 export default function Edit() {
   return (
-    <div data-view="entry-form" class="entry-form">
+    <div data-view="entry-form" className="entry-form">
       <form className="form">
         <div className="row">
           <div className="column-full">
@@ -13,13 +13,13 @@ export default function Edit() {
         <div className="row">
           <div className="column-full column-half">
             <img
-              src="images/placeholder-image-square.jpg"
+              src="/images/placeholder-image-square.jpg"
               alt="placeholder img"
             />
           </div>
           <div className="column-full column-half">
             <div className="title-box">
-              <label for="title-text">Title</label>
+              <label htmlFor="title-text">Title</label>
             </div>
             <div className="title-box-input">
               <input
@@ -31,7 +31,7 @@ export default function Edit() {
               />
             </div>
             <div className="image-text">
-              <label for="image-text">Photo URL</label>
+              <label htmlFor="image-text">Photo URL</label>
             </div>
             <div className="image-input">
               <input
@@ -47,7 +47,7 @@ export default function Edit() {
         <div className="row">
           <div className="column-full">
             <div className="title-notes">
-              <label for="notes-text">Notes</label>
+              <label htmlFor="notes-text">Notes</label>
             </div>
             <div className="notes-input">
               <textarea

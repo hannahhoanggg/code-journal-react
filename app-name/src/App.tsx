@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import './App.css';
+import './AppStyles.css';
+import './AppLayout.css';
 import NavBar from './NavBar';
 import Entries from './Entries';
-import Edit from './Edit';
+// import Edit from './Edit';
 import Create from './Create';
 
 export default function App() {
+  const [viewPage, setViewPage] = useState('create');
   return (
     <div>
-      <NavBar />
-      <Entries />
-      <Edit />
-      <Create />
+      <NavBar onClick={setViewPage} />
+      {viewPage === 'entries' && <Entries onClick={setViewPage} />}
+      {viewPage === 'create' && <Create />}
     </div>
   );
 }
