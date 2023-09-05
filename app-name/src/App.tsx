@@ -12,7 +12,7 @@ export default function App() {
     <div>
       <NavBar onClick={setViewPage} />
       {viewPage === 'entries' && <Entries onClick={setViewPage} />}
-      {viewPage === 'create' && <Create />}
+      {viewPage === 'create' && <Create viewSwap={setViewPage} />}
     </div>
   );
 }

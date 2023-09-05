@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { data } from './data';
+import RenderEntry from './RenderEntry';
 
-export default function Create() {
+export default function Create({ viewSwap }) {
   const [imageUrl, setImageUrl] = useState('');
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState('');
@@ -14,11 +15,16 @@ export default function Create() {
       notes: notes,
     };
     inputValues.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(inputValues);
+    RenderEntry();
+    viewSwap('entries');
+    console.log(data);
   }
 
   return (
     <div data-view="entry-form" className="entry-form">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="row">
           <div className="column-full">
             <div className="top-header">
@@ -83,7 +89,7 @@ export default function Create() {
           <div className="column-full">
             <div className="row button-row">
               <a className="delete-entry visibility-hidden">Delete Entry</a>
-              <button onClick={handleSubmit}>SAVE</button>
+              <button type="submit">SAVE</button>
             </div>
           </div>
         </div>
