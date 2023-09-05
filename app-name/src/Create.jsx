@@ -1,9 +1,21 @@
 import { useState } from 'react';
+import { data } from './data';
 
 export default function Create() {
-  const [imageUrl, setImageUrl] = useState(
-    '/images/placeholder-image-square.jpg'
-  );
+  const [imageUrl, setImageUrl] = useState('');
+  const [title, setTitle] = useState('');
+  const [notes, setNotes] = useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const inputValues = {
+      title: title,
+      imageUrl: imageUrl,
+      notes: notes,
+    };
+    inputValues.entryId = data.nextEntryId;
+  }
+
   return (
     <div data-view="entry-form" className="entry-form">
       <form className="form">
@@ -17,7 +29,10 @@ export default function Create() {
 
         <div className="row">
           <div className="column-full column-half">
-            <img src={imageUrl} alt="placeholder img" />
+            <img
+              src={imageUrl ? imageUrl : '/images/placeholder-image-square.jpg'}
+              alt="placeholder img"
+            />
           </div>
           <div className="column-full column-half">
             <div className="title-box">
@@ -30,6 +45,8 @@ export default function Create() {
                 type="text"
                 className="title"
                 id="title-text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
             <div className="image-text">
@@ -42,6 +59,7 @@ export default function Create() {
                 type="url"
                 className="image"
                 id="image-text"
+                value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
               />
             </div>
@@ -57,13 +75,15 @@ export default function Create() {
                 name="notes"
                 id="notes-text"
                 rows="6"
-                cols="10"></textarea>
+                cols="10"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}></textarea>
             </div>
           </div>
           <div className="column-full">
             <div className="row button-row">
               <a className="delete-entry visibility-hidden">Delete Entry</a>
-              <button>SAVE</button>
+              <button onClick={handleSubmit}>SAVE</button>
             </div>
           </div>
         </div>
