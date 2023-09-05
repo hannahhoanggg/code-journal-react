@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { data } from './data';
-// import RenderEntry from './RenderEntry';
 
 export default function Create({ viewSwap }) {
   const [imageUrl, setImageUrl] = useState('');
@@ -18,7 +17,6 @@ export default function Create({ viewSwap }) {
     data.nextEntryId++;
     data.entries.unshift(inputValues);
     viewSwap('entries');
-    console.log(data);
   }
 
   return (

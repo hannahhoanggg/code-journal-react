@@ -21,7 +21,7 @@ export default function Entries({ onClick }) {
       <div className="row">
         {data.entries.length > 0 ? (
           <ul className="entry-list">
-            <RenderEntry />
+            <RenderEntry onClick={onClick} />
           </ul>
         ) : (
           <div className="column-full">
